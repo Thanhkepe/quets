@@ -1,0 +1,33 @@
+local menuGui = Instance.new("ScreenGui")
+menuGui.ResetOnSpawn = false
+menuGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local menuFrame = Instance.new("Frame")
+menuFrame.Size = UDim2.new(1, 0, 1, 0)
+menuFrame.BackgroundTransparency = 1
+menuFrame.Parent = menuGui
+
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0, 35, 0, 35)
+button.Position = UDim2.new(0, 0, 0, 0)
+button.Text = "Triệu hồi phần"
+button.Parent = menuFrame
+
+button.MouseButton1Click:Connect(function()
+    local part = Instance.new("Part", workspace)
+part.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end)
+
+local button1 = Instance.new("TextButton")
+button1.Size = UDim2.new(0, 35, 0, 35)
+button1.Position = UDim2.new(1, -35, 0, 0)
+button1.Text = "Triệu Hồi Gạch"
+button1.Parent = menuFrame
+
+button1.MouseButton1Click:Connect(function()
+    local brick = Instance.new("Part")
+brick.Parent = workspace
+brick.BrickColor = BrickColor.new("Medium stone grey")
+brick.Size = Vector3.new(100, 30, 100)
+brick.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end)
